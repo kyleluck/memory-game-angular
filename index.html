@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body ng-app="memory-game" ng-controller="MemoryGameController">
-    <div ng-show="gameOver">You Win! <button ng-click="resetGame()">Play Again</button></div>
+    <div ng-show="gameOver">You Won in {{ moves }} moves! <button ng-click="resetGame()">Play Again</button></div>
     <div id="grid">
       <div ng-repeat="tile in grid" class="tile " ng-click="showTile(tile)">
         <img ng-class="tile.hide ? 'hide' : 'show'" ng-src="{{tile.url}}">

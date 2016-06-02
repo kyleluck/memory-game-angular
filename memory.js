@@ -5,6 +5,7 @@ app.controller('MemoryGameController', function($scope, $timeout) {
   var state = "first";
 
   $scope.gameOver = false;
+  $scope.moves = 0;
 
   function Tile(url) {
     this.url = url;
@@ -62,6 +63,7 @@ app.controller('MemoryGameController', function($scope, $timeout) {
     else {
       state = "first";
       $scope.match();
+      $scope.moves++;
     }
   };
 
@@ -83,6 +85,7 @@ app.controller('MemoryGameController', function($scope, $timeout) {
     createGrid();
     shuffleArray($scope.grid);
     $scope.gameOver = false;
+    $scope.moves = 0;
   }
 
   $scope.resetGame();
